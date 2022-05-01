@@ -1,0 +1,48 @@
+-> Fotka ✅
+-> black and white ✅
+-> detekce hrany
+-> přímka/náklon
+
+
+edges = cv2.Canny(thresh1,0,255)
+
+plt.imshow(edges,cmap = 'gray')
+plt.show()
+
+
+
+
+for y in range(thresh1.shape[0]):
+    for x in range(thresh1.shape[1]):
+        print(thresh1[y][x])
+
+
+
+
+list = []
+
+p = thresh1[0][0]
+for y in range(120):
+    if p != thresh1[y][0]:
+        list.append((0,y))
+        print ([0,y])
+        p = thresh1[y][0]
+print("konec")
+for x in range(160):
+    if p != thresh1[119][x]:
+        list.append((x,119))
+        print ([x,119])
+        p = thresh1[119][x]
+print("konec")
+for y in reversed(range(120)):
+    if p != thresh1[y][159]:
+        list.append((159,y))
+        print ([159,y])
+        p = thresh1[y][159]
+print("konec")
+for x in reversed(range(160)):
+    if p != thresh1[0][x]:
+        list.append((x,0))
+        print ([x,0])
+        p = thresh1[0][x]
+print("konec")

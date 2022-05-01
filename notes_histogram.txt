@@ -1,0 +1,4 @@
+opencv jako first
+nactu grayscale
+hledat pixely
+radit kategorie
